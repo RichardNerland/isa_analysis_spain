@@ -642,8 +642,8 @@ def update_financial_metrics(results):
                     f"${results['average_investor_payment']:,.2f}"
                 ]),
                 html.P([
-                    html.Strong("Avg Malengo Revenue: "), 
-                    f"${results['average_malengo_payment']:,.2f}"
+                    html.Strong("Avg ISA Provider Revenue: "), 
+                    f"${results['average_isa_provider_payment']:,.2f}"
                 ]),
                 html.P([
                     html.Strong("Total IRR: "), 
@@ -666,8 +666,8 @@ def update_financial_metrics(results):
                     f"${results['average_nominal_investor_payment']:,.2f}"
                 ]),
                 html.P([
-                    html.Strong("Avg Malengo Revenue: "), 
-                    f"${results['average_nominal_malengo_payment']:,.2f}"
+                    html.Strong("Avg ISA Provider Revenue: "), 
+                    f"${results['average_nominal_isa_provider_payment']:,.2f}"
                 ]),
                 html.P([
                     html.Strong("Total IRR: "), 
@@ -708,9 +708,9 @@ def update_annual_payments_graph(results):
     
     fig.add_trace(go.Scatter(
         x=years, 
-        y=list(results['malengo_payment_by_year'].values()),
+        y=list(results['isa_provider_payment_by_year'].values()),
         mode='lines',
-        name='Malengo (Real)',
+        name='ISA Provider (Real)',
         line=dict(color='green')
     ))
     
@@ -725,9 +725,9 @@ def update_annual_payments_graph(results):
     
     fig.add_trace(go.Scatter(
         x=years, 
-        y=list(results['nominal_malengo_payment_by_year'].values()),
+        y=list(results['nominal_isa_provider_payment_by_year'].values()),
         mode='lines',
-        name='Malengo (Nominal)',
+        name='ISA Provider (Nominal)',
         line=dict(color='green', dash='dash')
     ))
     
