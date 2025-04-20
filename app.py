@@ -424,6 +424,28 @@ def update_degree_params_ui(degree_params):
                 )
             ]),
             
+            html.Label("Years to Complete"),
+            dcc.Input(
+                id=f'{name}-years-to-complete',
+                type='number',
+                value=params['years_to_complete'],
+                min=0,
+                max=25,
+                step=1,
+                style={'width': '100%', 'marginBottom': '15px'}
+            ),
+            
+            html.Label("Years to Promotion"),
+            dcc.Input(
+                id=f'{name}-years-to-promotion',
+                type='number',
+                value=params.get('years_to_promotion', None),  # Use get() since this is optional
+                min=0,
+                max=25,
+                step=1,
+                style={'width': '100%', 'marginBottom': '15px'}
+            ),
+            
             html.Hr(style={'marginTop': '20px', 'marginBottom': '20px'})
         ], style={'marginBottom': '20px'}))
     
